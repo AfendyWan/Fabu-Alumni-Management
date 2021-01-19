@@ -11,6 +11,9 @@ class HttpService {
   String getAlumniRestAPI_Link(){
     return 'http://alumni-module.herokuapp.com/mobile-api/alumniList';
   }
+  String getNewsRestAPI_Link(){
+    return 'https://testeventmodule.herokuapp.com/News';
+  }
   String getEventRestAPI_Link(){
     return 'https://testeventmodule.herokuapp.com/Event';
   }

@@ -1,5 +1,6 @@
 import 'dart:convert';
 import '../pages/alumni_model.dart';
+import '../pages/news_model.dart';
 import '../pages/http_service.dart';
 import 'package:http/http.dart';
 import 'charity_model.dart';
@@ -23,6 +24,21 @@ class ConcreteHttpService extends HttpService{
       return posts;
     } else {
       throw "can't get posts";
+    }
+  }
+
+  Future<List<News>> getNews() async {
+    Response res = await get(getNewsRestAPI_Link);
+
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+
+      List<News> news =
+      body.map((dynamic item) => News.fromJson(item)).toList();
+
+      return news;
+    } else {
+      throw "can't get news";
     }
   }
 

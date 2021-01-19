@@ -139,7 +139,7 @@ class _SideBarState extends State<SideBar>
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context)
-                              .add(NavigationEvents.MyOrdersClickedEvent);
+                              .add(NavigationEvents.MyNewsClickedEvent);
                         },
                       ),
                       MenuItem(

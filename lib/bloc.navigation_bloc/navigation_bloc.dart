@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import '../pages/reportMainPage.dart';
 import '../pages/myaccountspage.dart';
-import '../pages/myorderspage.dart';
+import '../pages/newsMainPage.dart';
 import '../pages/alumniListPage.dart';
 import '../pages/homepage.dart';
 import '../pages/events.dart';
@@ -10,7 +10,7 @@ import '../pages/charity.dart';
 enum NavigationEvents {
   HomePageClickedEvent,
   MyAlumniesClickedEvent,
-  MyOrdersClickedEvent,
+  MyNewsClickedEvent,
   MyEventsClickedEvent,
   MyCharityClickedEvent,
   MyReportsClickedEvent,
@@ -31,8 +31,8 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
       case NavigationEvents.MyAlumniesClickedEvent:
         yield AlumniesPage();
         break;
-      case NavigationEvents.MyOrdersClickedEvent:
-        yield MyOrdersPage();
+      case NavigationEvents.MyNewsClickedEvent:
+        yield NewsPage();
         break;
       case NavigationEvents.MyEventsClickedEvent:
         yield EventMainPage();

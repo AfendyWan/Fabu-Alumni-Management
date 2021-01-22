@@ -11,8 +11,10 @@ class EventDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[100],
       appBar: AppBar(
         title: Text(event.eventTitle),
+        backgroundColor: Colors.blue[400],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -54,6 +56,7 @@ class EventDetail extends StatelessWidget {
                 ),
               ],
             ),
+            shadowColor: Colors.blueAccent,
           ),
         ),
       ),

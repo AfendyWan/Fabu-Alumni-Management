@@ -12,8 +12,10 @@ class CharityDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[100],
       appBar: AppBar(
         title: Text(charity.charityTitle),
+        backgroundColor: Colors.blue[400],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -43,6 +45,7 @@ class CharityDetail extends StatelessWidget {
                 ),
               ],
             ),
+            shadowColor: Colors.blueAccent,
           ),
         ),
       ),

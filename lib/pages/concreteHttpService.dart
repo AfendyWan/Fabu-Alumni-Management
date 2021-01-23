@@ -44,16 +44,39 @@ class ConcreteHttpService extends HttpService {
   Future<List<Event>> getEvents() async {
     Response res = await get(getEventRestAPI_Link());
 
-    if (res.statusCode == 200) {
-      List<dynamic> body = jsonDecode(res.body);
+    switch (res.statusCode) {
+      case 200:
+        return getexecuteSuccessState(res);
+        break;
 
-      List<Event> events =
-          body.map((dynamic item) => Event.fromJson(item)).toList();
+      case 400:
+        executeClientErrorState();
+        break;
 
-      return events;
-    } else {
-      throw "Can't get events lists.";
+      case 500:
+        executeServerErrorState();
+        break;
+
+      default:
+        throw "Can't get events";
     }
+  }
+
+  Future<List<Event>> getexecuteSuccessState(Response res) async {
+    List<dynamic> body = jsonDecode(res.body);
+
+    List<Event> events =
+        body.map((dynamic item) => Event.fromJson(item)).toList();
+
+    return events;
+  }
+
+  void executeClientErrorState() async {
+    throw "Client error.";
+  }
+
+  void executeServerErrorState() async {
+    throw "Server Error.";
   }
 
   Future<List<Charity>> getCharity() async {

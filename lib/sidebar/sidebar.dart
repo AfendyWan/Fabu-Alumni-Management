@@ -6,6 +6,7 @@ import 'package:rxdart/rxdart.dart';
 
 import '../bloc.navigation_bloc/navigation_bloc.dart';
 import '../sidebar/menu_item.dart';
+import 'package:mobilesda3/pages/login.dart';
 
 class SideBar extends StatefulWidget {
   @override
@@ -108,7 +109,7 @@ class _SideBarState extends State<SideBar>
                       ),
                       MenuItem(
                         icon: Icons.home,
-                        title: "Profile",
+                        title: "Home Page",
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context)
@@ -174,6 +175,18 @@ class _SideBarState extends State<SideBar>
                       MenuItem(
                         icon: Icons.exit_to_app,
                         title: "Logout",
+                        onTap: () {
+                          onIconPressed();
+                          bool _isLoading = false;
+                          setState(() {
+                            _isLoading = false;
+                          });
+                          Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      LoginPage()),
+                              (Route<dynamic> route) => false);
+                        },
                       ),
                     ],
                   ),

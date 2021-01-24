@@ -12,6 +12,7 @@ class CharityMainPage extends MainAppBarInterface with NavigationStates {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.blue[100],
         appBar: MainAppBarInterface(
           title: const Text('Charity',
               style: TextStyle(fontSize: 28, color: Colors.white)),
@@ -26,10 +27,14 @@ class CharityMainPage extends MainAppBarInterface with NavigationStates {
               return ListView(
                 children: charity
                     .map((Charity charity) => ListTile(
-                          title: Text(charity.charityTitle),
-                          subtitle: Text(
-                            charity.charityID.toString(),
+                          leading: CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                "https://i.pinimg.com/originals/d4/4e/45/d44e4503e22f7eb53b18705ca2ef1da6.png"),
                           ),
+                          title: Text(charity.charityTitle),
+                          trailing: Icon(Icons.keyboard_arrow_right),
+                          contentPadding:
+                              EdgeInsets.symmetric(horizontal: 35.0),
                           onTap: () =>
                               Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => CharityDetail(

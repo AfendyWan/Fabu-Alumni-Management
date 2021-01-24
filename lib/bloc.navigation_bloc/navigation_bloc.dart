@@ -24,26 +24,31 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
 
   @override
   Stream<NavigationStates> mapEventToState(NavigationEvents event) async* {
-    switch (event) {
-      case NavigationEvents.HomePageClickedEvent:
+    if (event == NavigationEvents.HomePageClickedEvent) 
+      {
         yield HomePage();
-        break;
-      case NavigationEvents.MyAlumniesClickedEvent:
+      }
+     else if (event == NavigationEvents.MyAlumniesClickedEvent)
+     {
         yield AlumniesPage();
-        break;
-      case NavigationEvents.MyNewsClickedEvent:
+     }
+      else if (event == NavigationEvents.MyNewsClickedEvent)
+      {
         yield NewsPage();
-        break;
-      case NavigationEvents.MyEventsClickedEvent:
+      }
+      else if(event == NavigationEvents.MyEventsClickedEvent)
+      {
         yield EventMainPage();
-        break;
-      case NavigationEvents.MyCharityClickedEvent:
+      }
+      else if (event == NavigationEvents.MyCharityClickedEvent)
+      {
         yield CharityMainPage();
-        break;
-      case NavigationEvents.MyReportsClickedEvent:
+      }
+      else if (event == NavigationEvents.MyReportsClickedEvent)
+      {
         yield ReportMainPage();
-        break;
+      }
 
-    }
+    
   }
 }

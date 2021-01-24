@@ -6,20 +6,19 @@ import 'package:http/http.dart';
 import 'charity_model.dart';
 import 'event_model.dart';
 
-class ConcreteHttpService extends HttpService{
+class ConcreteHttpService extends HttpService {
   //This link is to allow the mobile to fetch data from web using API and package http
   //This link will be change from time to time due to using ngrok to make the localhost online
   //This link will only be permanent when the web is officially deploy real time
 
-
   Future<List<Alumni>> getAlumnies() async {
-    Response res = await get(getAlumniRestAPI_Link);
+    Response res = await get(getAlumniRestAPI_Link());
 
     if (res.statusCode == 200) {
       List<dynamic> body = jsonDecode(res.body);
 
       List<Alumni> posts =
-      body.map((dynamic item) => Alumni.fromJson(item)).toList();
+          body.map((dynamic item) => Alumni.fromJson(item)).toList();
 
       return posts;
     } else {
@@ -28,13 +27,13 @@ class ConcreteHttpService extends HttpService{
   }
 
   Future<List<News>> getNews() async {
-    Response res = await get(getNewsRestAPI_Link);
+    Response res = await get(getNewsRestAPI_Link());
 
     if (res.statusCode == 200) {
       List<dynamic> body = jsonDecode(res.body);
 
       List<News> news =
-      body.map((dynamic item) => News.fromJson(item)).toList();
+          body.map((dynamic item) => News.fromJson(item)).toList();
 
       return news;
     } else {
@@ -45,26 +44,49 @@ class ConcreteHttpService extends HttpService{
   Future<List<Event>> getEvents() async {
     Response res = await get(getEventRestAPI_Link());
 
-    if (res.statusCode == 200) {
-      List<dynamic> body = jsonDecode(res.body);
+    switch (res.statusCode) {
+      case 200:
+        return getexecuteSuccessState(res);
+        break;
 
-      List<Event> events =
-      body.map((dynamic item) => Event.fromJson(item)).toList();
+      case 400:
+        executeClientErrorState();
+        break;
 
-      return events;
-    } else {
-      throw "Can't get events lists.";
+      case 500:
+        executeServerErrorState();
+        break;
+
+      default:
+        throw "Can't get events";
     }
   }
 
+  Future<List<Event>> getexecuteSuccessState(Response res) async {
+    List<dynamic> body = jsonDecode(res.body);
+
+    List<Event> events =
+        body.map((dynamic item) => Event.fromJson(item)).toList();
+
+    return events;
+  }
+
+  void executeClientErrorState() async {
+    throw "Client error.";
+  }
+
+  void executeServerErrorState() async {
+    throw "Server Error.";
+  }
+
   Future<List<Charity>> getCharity() async {
-    Response res = await get(getCharityRestAPI_Link);
+    Response res = await get(getCharityRestAPI_Link());
 
     if (res.statusCode == 200) {
       List<dynamic> body = jsonDecode(res.body);
 
       List<Charity> charity =
-      body.map((dynamic item) => Charity.fromJson(item)).toList();
+          body.map((dynamic item) => Charity.fromJson(item)).toList();
 
       return charity;
     } else {

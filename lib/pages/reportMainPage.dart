@@ -7,6 +7,9 @@ class ReportMainPage extends StatelessWidget with NavigationStates {
  @override
   Widget build(BuildContext context){
     return Scaffold(appBar: AppBar(
+      iconTheme: IconThemeData(
+        color: Colors.white, 
+  ),
       title: Text('Report', style: TextStyle(
               color: Colors.white
       )),
@@ -22,12 +25,12 @@ Widget getListView(BuildContext context){
       Card(
         child: ListTile(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => AlumniReport(),
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ReportPage(),
           ));
         } ,
         leading: Icon(Icons.analytics_outlined),
         title: Text("Alumni Batch Report"),
-        subtitle: Text("Report on alumni number per batch"),
+        subtitle: Text("Report on number of alumni per batch"),
         trailing: Icon(Icons.arrow_forward_ios_rounded),
         ),
       ),

@@ -12,6 +12,7 @@ class EventMainPage extends MainAppBarInterface with NavigationStates {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.blue[100],
         appBar: MainAppBarInterface(
           title: const Text('Events',
               style: TextStyle(fontSize: 28, color: Colors.white)),
@@ -25,10 +26,17 @@ class EventMainPage extends MainAppBarInterface with NavigationStates {
               return ListView(
                 children: events
                     .map((Event event) => ListTile(
-                          title: Text(event.eventTitle),
-                          subtitle: Text(
-                            event.eventID.toString(),
+                          leading: CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                "https://image.flaticon.com/icons/png/512/1458/1458512.png"),
                           ),
+                          title: Text(event.eventTitle),
+                          trailing: Icon(Icons.keyboard_arrow_right),
+                          subtitle: Text(
+                            event.eventDescription,
+                          ),
+                          contentPadding:
+                              EdgeInsets.symmetric(horizontal: 35.0),
                           onTap: () =>
                               Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => EventDetail(

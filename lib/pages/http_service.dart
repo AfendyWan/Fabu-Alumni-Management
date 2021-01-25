@@ -8,7 +8,7 @@ import 'event_model.dart';
 // to implements its methods
 class HttpService {
   String getAlumniRestAPI_Link() {
-    return 'http://alumni-module.herokuapp.com/mobile-api/alumniList';
+    return 'https://alumni-module.herokuapp.com/mobile-api/alumniList';
   }
 
   String getNewsRestAPI_Link() {

@@ -23,7 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http:
+  http: any
+  shared_preferences: any
   syncfusion_flutter_charts: ^18.4.35
 
 

@@ -118,6 +118,15 @@ class _SideBarState extends State<SideBar>
                       ),
                       MenuItem(
                         icon: Icons.person,
+                        title: "Profile",
+                        onTap: () {
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context)
+                              .add(NavigationEvents.ProfileClickedEvent);
+                        },
+                      ),
+                      MenuItem(
+                        icon: Icons.person,
                         title: "View Alumni List",
                         onTap: () {
                           onIconPressed();

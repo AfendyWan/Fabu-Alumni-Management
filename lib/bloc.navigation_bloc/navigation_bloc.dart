@@ -6,6 +6,7 @@ import '../pages/alumniListPage.dart';
 import '../pages/homepage.dart';
 import '../pages/events.dart';
 import '../pages/charity.dart';
+import '../pages/profile.dart';
 
 enum NavigationEvents {
   HomePageClickedEvent,
@@ -14,6 +15,7 @@ enum NavigationEvents {
   MyEventsClickedEvent,
   MyCharityClickedEvent,
   MyReportsClickedEvent,
+  ProfileClickedEvent,
 }
 
 abstract class NavigationStates {}
@@ -28,6 +30,10 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
       {
         yield HomePage();
       }
+      else if (event == NavigationEvents.ProfileClickedEvent)
+     {
+        yield ProfilePage();
+     }
      else if (event == NavigationEvents.MyAlumniesClickedEvent)
      {
         yield AlumniesPage();

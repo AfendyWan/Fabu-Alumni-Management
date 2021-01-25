@@ -5,6 +5,7 @@ import '../pages/http_service.dart';
 import 'package:http/http.dart';
 import 'charity_model.dart';
 import 'event_model.dart';
+import 'profile_model.dart';
 
 class ConcreteHttpService extends HttpService {
   //This link is to allow the mobile to fetch data from web using API and package http
@@ -77,6 +78,21 @@ class ConcreteHttpService extends HttpService {
 
   void executeServerErrorState() async {
     throw "Server Error.";
+  }
+
+  Future<List<Profile>> getProfile() async {
+    Response res = await get(getProfileRestAPI_Link());
+
+    if (res.statusCode == 200) {
+      List<dynamic> body = jsonDecode(res.body);
+
+      List<Profile> profile =
+          body.map((dynamic item) => Profile.fromJson(item)).toList();
+
+      return profile;
+    } else {
+      throw "Can't get profile";
+    }
   }
 
   Future<List<Charity>> getCharity() async {

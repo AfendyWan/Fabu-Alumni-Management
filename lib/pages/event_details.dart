@@ -47,7 +47,7 @@ class EventDetail extends StatelessWidget {
                   subtitle: Text("${event.eventCapacity}"),
                 ),
                 ListTile(
-                  title: Text("Fee"),
+                  title: Text("Fee (RM)"),
                   subtitle: Text("${event.eventFee}"),
                 ),
                 ListTile(

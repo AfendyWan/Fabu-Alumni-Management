@@ -32,11 +32,11 @@ class CharityDetail extends StatelessWidget {
                   subtitle: Text(charity.charityDescription),
                 ),
                 ListTile(
-                  title: Text("Target Amount"),
+                  title: Text("Target Amount (RM)"),
                   subtitle: Text("${charity.charityTargetAmt}"),
                 ),
                 ListTile(
-                  title: Text("Gathered Amount"),
+                  title: Text("Gathered Amount (RM)"),
                   subtitle: Text("${charity.charityGatheredAmt}"),
                 ),
                 ListTile(

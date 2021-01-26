@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [Colors.blue, Colors.teal],
+              colors: [Colors.lightBlue, Colors.blue],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter),
         ),
@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                 signIn(emailController.text, passwordController.text);
               },
         elevation: 0.0,
-        color: Colors.purple,
+        color: Colors.black54,
         child: Text("Sign In", style: TextStyle(color: Colors.white70)),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       ),
@@ -141,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       margin: EdgeInsets.only(top: 50.0),
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-      child: Text("APP NAME",
+      child: Text("FABU Alumni Management System",
           style: TextStyle(
               color: Colors.white70,
               fontSize: 40.0,

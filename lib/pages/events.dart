@@ -25,7 +25,8 @@ class EventMainPage extends MainAppBarInterface with NavigationStates {
 
               return ListView(
                 children: events
-                    .map((Event event) => ListTile(
+                    .map((Event event) => Card(
+                            child: ListTile(
                           leading: CircleAvatar(
                             backgroundImage: NetworkImage(
                                 "https://image.flaticon.com/icons/png/512/1458/1458512.png"),
@@ -43,7 +44,7 @@ class EventMainPage extends MainAppBarInterface with NavigationStates {
                               event: event,
                             ),
                           )),
-                        ))
+                        )))
                     .toList(),
               );
             }

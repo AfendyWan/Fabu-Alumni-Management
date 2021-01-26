@@ -26,7 +26,8 @@ class CharityMainPage extends MainAppBarInterface with NavigationStates {
 
               return ListView(
                 children: charity
-                    .map((Charity charity) => ListTile(
+                    .map((Charity charity) => Card(
+                            child: ListTile(
                           leading: CircleAvatar(
                             backgroundImage: NetworkImage(
                                 "https://i.pinimg.com/originals/d4/4e/45/d44e4503e22f7eb53b18705ca2ef1da6.png"),
@@ -41,7 +42,7 @@ class CharityMainPage extends MainAppBarInterface with NavigationStates {
                               charity: charity,
                             ),
                           )),
-                        ))
+                        )))
                     .toList(),
               );
             }

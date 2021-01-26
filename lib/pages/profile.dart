@@ -26,7 +26,9 @@ class ProfilePage extends MainAppBarInterface with NavigationStates {
 
               return ListView(
                 children: profile
-                    .map((Profile profile) => ListTile(
+                    .map((Profile profile) => Card(
+                            child: ListTile(
+                          leading: Icon(Icons.account_circle),
                           title: Text(profile.name),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           contentPadding:
@@ -37,7 +39,7 @@ class ProfilePage extends MainAppBarInterface with NavigationStates {
                               profile: profile,
                             ),
                           )),
-                        ))
+                        )))
                     .toList(),
               );
             }

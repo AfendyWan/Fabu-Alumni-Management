@@ -15,20 +15,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "App Name",
+      title: "FABU Alumni Management System",
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen(
         splash: Container(
-            child: Image(image: AssetImage('images/UTM.png'),),
-                height: 400.0,
+          child: Image(
+            image: AssetImage('images/UTM.png'),
+          ),
+          height: 400.0,
           width: 400.0,
         ),
-
         nextScreen: MainPage(),
         splashTransition: SplashTransition.sizeTransition,
         backgroundColor: Colors.lightBlueAccent,
       ),
-   
       theme: ThemeData(
           //accentColor: Colors.white70,
           scaffoldBackgroundColor: Colors.white,
@@ -63,7 +63,6 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       //body: Center(child: Text("Home Page")),
       //drawer: SideBarLayout(),
       //drawer: Drawer(),

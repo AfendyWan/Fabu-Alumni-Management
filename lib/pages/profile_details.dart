@@ -43,7 +43,10 @@ class ProfileDetail extends StatelessWidget {
                   title: Text("Phone Number"),
                   subtitle: Text(profile.phoneNum),
                 ),
-                
+                ListTile(
+                  title: Text("Password"),
+                  subtitle: Text(profile.password),
+                ),
               ],
             ),
             shadowColor: Colors.blueAccent,

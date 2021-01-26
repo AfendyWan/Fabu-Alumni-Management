@@ -43,26 +43,19 @@ class _LoginPageState extends State<LoginPage> {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     Map data = {
       'email': email,
-      //'id': id,
-      //'name': name,
       'password': pass,
-      //'phoneNum': phoneNum,
-      //'role': role,
     };
     var jsonResponse = null;
-    //https://alumni-module.herokuapp.com/ManageUserController?option=mobile-api
-    //https://reqres.in/api/login
-
-    //email: eve.holt@reqres.in
-    //password: cityslicka
-    var response = await http.post("https://reqres.in/api/login", body: data);
+    var response = await http.post(
+        "https://alumnifabuapi.000webhostapp.com/login-api.php",
+        body: json.encode(data));
     if (response.statusCode == 200) {
       jsonResponse = json.decode(response.body);
       if (jsonResponse != null) {
         setState(() {
           _isLoading = false;
         });
-        sharedPreferences.setString("token", jsonResponse['token']);
+        //sharedPreferences.setString("token", jsonResponse['token']);
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (BuildContext context) => MainPage()),
             (Route<dynamic> route) => false);

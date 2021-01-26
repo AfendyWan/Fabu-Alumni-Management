@@ -11,7 +11,7 @@ class alumniDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.blueGrey[800],
+      backgroundColor: Colors.black87,
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: Colors.white, //change your color here
@@ -37,8 +37,8 @@ class alumniDetail extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
-                    Color(0x00380036),
-                    Color(0xFF0CBABA),
+                    Color(0xFFB0F3F1),
+                    Color(0xFFFFCFDF),
                   ])),
                   padding: EdgeInsets.all(16),
                   child: ListTile(
@@ -56,6 +56,7 @@ class alumniDetail extends StatelessWidget {
                         fontSize: 20.0,
                       ),
                     ),
+                    onTap: (){},
                   ),
                 ),
               ),
@@ -72,8 +73,8 @@ class alumniDetail extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
-                        Color(0x00380036),
-                        Color(0xFF0CBABA),
+                        Color(0xFFB0F3F1),
+                        Color(0xFFFFCFDF),
                       ])),
                   padding: EdgeInsets.all(16),
                   child: ListTile(
@@ -107,8 +108,8 @@ class alumniDetail extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
-                        Color(0x00380036),
-                        Color(0xFF0CBABA),
+                        Color(0xFFB0F3F1),
+                        Color(0xFFFFCFDF),
                       ])),
                   padding: EdgeInsets.all(16),
                   child: ListTile(
@@ -142,8 +143,8 @@ class alumniDetail extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
-                        Color(0x00380036),
-                        Color(0xFF0CBABA),
+                        Color(0xFFB0F3F1),
+                        Color(0xFFFFCFDF),
                       ])),
                   padding: EdgeInsets.all(16),
                   child: ExpansionTile(
@@ -276,8 +277,8 @@ class alumniDetail extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
-                        Color(0x00380036),
-                        Color(0xFF0CBABA),
+                        Color(0xFFB0F3F1),
+                        Color(0xFFFFCFDF),
                       ])),
                   padding: EdgeInsets.all(16),
                   child: ListTile(
@@ -312,8 +313,8 @@ class alumniDetail extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
-                    Color(0x00380036),
-                    Color(0xFF0CBABA),
+                        Color(0xFFB0F3F1),
+                        Color(0xFFFFCFDF),
                   ])),
                   padding: EdgeInsets.all(16),
                   child: ListTile(

@@ -11,12 +11,12 @@ class Charity {
 
   Charity(
       {@required this.charityDateline,
-      @required this.charityDescription,
-      @required this.charityGatheredAmt,
-      @required this.charityID,
-      @required this.charityImage,
-      @required this.charityTargetAmt,
-      @required this.charityTitle});
+        @required this.charityDescription,
+        @required this.charityGatheredAmt,
+        @required this.charityID,
+        @required this.charityImage,
+        @required this.charityTargetAmt,
+        @required this.charityTitle});
 
   factory Charity.fromJson(Map<String, dynamic> json) {
     return Charity(

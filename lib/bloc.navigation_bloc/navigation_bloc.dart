@@ -3,7 +3,6 @@ import '../pages/reportMainPage.dart';
 import '../pages/myaccountspage.dart';
 import '../pages/newsMainPage.dart';
 import '../pages/alumniListPage.dart';
-import '../pages/homepage.dart';
 import '../pages/events.dart';
 import '../pages/charity.dart';
 import '../pages/profile.dart';
@@ -28,7 +27,7 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
   Stream<NavigationStates> mapEventToState(NavigationEvents event) async* {
     if (event == NavigationEvents.HomePageClickedEvent) 
       {
-        yield HomePage();
+        yield MyAccountsPage();
       }
       else if (event == NavigationEvents.ProfileClickedEvent)
      {

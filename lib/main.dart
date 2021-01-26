@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'sidebar/sidebar_layout.dart';
 
@@ -16,7 +17,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "App Name",
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: AnimatedSplashScreen(
+        splash: Container(
+            child: Image(image: AssetImage('images/UTM.png'),),
+                height: 400.0,
+          width: 400.0,
+        ),
+
+        nextScreen: MainPage(),
+        splashTransition: SplashTransition.sizeTransition,
+        backgroundColor: Colors.lightBlueAccent,
+      ),
+   
       theme: ThemeData(
           //accentColor: Colors.white70,
           scaffoldBackgroundColor: Colors.white,
@@ -51,25 +63,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: Colors.white,
-        ),
-        //title: Text("App Name", style: TextStyle(color: Colors.white)),
-        actions: <Widget>[
-          FlatButton(
-            onPressed: () {
-              sharedPreferences.clear();
-              sharedPreferences.commit();
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => LoginPage()),
-                  (Route<dynamic> route) => false);
-            },
-            child: Text("Log Out", style: TextStyle(color: Colors.white)),
-          ),
-        ],
-      ),
+
       //body: Center(child: Text("Home Page")),
       //drawer: SideBarLayout(),
       //drawer: Drawer(),

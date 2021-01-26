@@ -126,8 +126,8 @@ class _SideBarState extends State<SideBar>
                         },
                       ),
                       MenuItem(
-                        icon: Icons.person,
-                        title: "View Alumni List",
+                        icon: Icons.list_alt_rounded,
+                        title: "Alumni List",
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context)

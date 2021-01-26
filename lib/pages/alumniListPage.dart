@@ -13,7 +13,7 @@ class AlumniesPage extends MainAppBarInterface with NavigationStates {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blue[100],
+        backgroundColor: Colors.black87,
         appBar: MainAppBarInterface(
           title:
               const Text('Alumni List', style: TextStyle(color: Colors.white)),

@@ -13,7 +13,7 @@ class AlumniesPage extends MainAppBarInterface with NavigationStates {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black87,
+        backgroundColor: Colors.blue[100],
         appBar: MainAppBarInterface(
           title:
               const Text('Alumni List', style: TextStyle(color: Colors.white)),
@@ -36,8 +36,8 @@ class AlumniesPage extends MainAppBarInterface with NavigationStates {
                         child: Container(
                           decoration: BoxDecoration(
                               gradient: LinearGradient(colors: [
-                            Color(0x00380036),
-                            Color(0xFF0CBABA),
+                            Color(0x00ece9e6),
+                            Color(0xFFffffff),
                           ])),
                           padding: EdgeInsets.all(16),
                           child: ListTile(

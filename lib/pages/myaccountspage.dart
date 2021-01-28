@@ -48,8 +48,8 @@ class MyAccountsPage extends StatelessWidget with NavigationStates {
         body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
-            Color(0xFF09C6F9),
-            Color(0xFF045DE9),
+                Color(0xFF83EAF1),
+                Color(0xFF63A4FF),
           ])),
           child: SafeArea(
             child: Column(
@@ -61,7 +61,7 @@ class MyAccountsPage extends StatelessWidget with NavigationStates {
                     margin:
                         EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
                     child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(12.0),
                         child: Image(
                           image: NetworkImage(
                               'https://builtsurvey.utm.my/wp-content/uploads/2019/04/fabu.jpg'),

@@ -15,8 +15,8 @@ class newsDetails extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
-            Color(0xFF0D324D),
-            Color(0xFF7F5A83),
+            Color(0xFF0ed2f7),
+            Color(0xFFb2fefa),
       ])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -46,8 +46,8 @@ class newsDetails extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           gradient: LinearGradient(colors: [
-                        Color(0x00380036),
-                        Color(0xFF0CBABA),
+                            Color(0xFFB0F3F1),
+                            Color(0xFFffffff),
                       ])),
                       padding: EdgeInsets.all(16),
                       child: ListTile(
@@ -79,8 +79,8 @@ class newsDetails extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           gradient: LinearGradient(colors: [
-                        Color(0x00380036),
-                        Color(0xFF0CBABA),
+                            Color(0xFFB0F3F1),
+                            Color(0xFFffffff),
                       ])),
                       padding: EdgeInsets.all(16),
                       child: ListTile(
@@ -122,14 +122,14 @@ class newsDetails extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           gradient: LinearGradient(colors: [
-                        Color(0x00380036),
-                        Color(0xFF0CBABA),
+                            Color(0xFFB0F3F1),
+                            Color(0xFFffffff),
                       ])),
                       padding: EdgeInsets.all(16),
                       child: ListTile(
                         leading: Icon(Icons.language_rounded),
                         title: Text(
-                          "News Website",
+                          "For more info",
                           style: TextStyle(
                             fontSize: 10.0,
                             color: Colors.black87,

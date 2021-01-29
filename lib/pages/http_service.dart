@@ -27,6 +27,6 @@ class HttpService {
   }
 
   String getProfileRestAPI_Link() {
-    return 'https://alumni-module.herokuapp.com/ManageUserController?option=mobile-api';
+    return 'https://alumni-system-fabu.herokuapp.com/ManageUserController?option=mobile-api';
   }
 }

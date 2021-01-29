@@ -51,14 +51,16 @@ class _LoginPageState extends State<LoginPage> {
         body: json.encode(data));
     if (response.statusCode == 200) {
       jsonResponse = json.decode(response.body);
+
       if (jsonResponse != null) {
         setState(() {
           _isLoading = false;
         });
-        //sharedPreferences.setString("token", jsonResponse['token']);
+        sharedPreferences.setString("token", jsonResponse);
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (BuildContext context) => MainPage()),
             (Route<dynamic> route) => false);
+        print("success");
       }
     } else {
       setState(() {

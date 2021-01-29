@@ -9,7 +9,9 @@ import 'profile_model.dart';
 // to implements its methods
 class HttpService {
   String getAlumniRestAPI_Link() {
-    return 'https://alumni-module.herokuapp.com/mobile-api/alumniList';
+  //https://alumni-system-fabu.herokuapp.com/
+    //  return 'https://alumni-module.herokuapp.com/mobile-api/alumniList';
+    return 'https://alumni-system-fabu.herokuapp.com/mobile-api/alumniList';
   }
 
   String getNewsRestAPI_Link() {

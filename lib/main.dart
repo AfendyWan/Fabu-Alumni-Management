@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
         nextScreen: MainPage(),
         splashTransition: SplashTransition.sizeTransition,
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Color.fromRGBO(65, 11, 19, 1.0)
       ),
       theme: ThemeData(
           //accentColor: Colors.white70,

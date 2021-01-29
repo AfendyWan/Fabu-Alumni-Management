@@ -14,7 +14,9 @@ class newsDetails extends StatelessWidget {
     // TODO: implement build
     return Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
+          gradient: LinearGradient(
+
+              colors: [
             Color(0xFF0ed2f7),
             Color(0xFFb2fefa),
       ])),
@@ -46,7 +48,7 @@ class newsDetails extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           gradient: LinearGradient(colors: [
-                            Color(0xFFB0F3F1),
+                            Color(0xFFffffff),
                             Color(0xFFffffff),
                       ])),
                       padding: EdgeInsets.all(16),
@@ -79,7 +81,7 @@ class newsDetails extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           gradient: LinearGradient(colors: [
-                            Color(0xFFB0F3F1),
+                            Color(0xFFffffff),
                             Color(0xFFffffff),
                       ])),
                       padding: EdgeInsets.all(16),
@@ -122,7 +124,7 @@ class newsDetails extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                           gradient: LinearGradient(colors: [
-                            Color(0xFFB0F3F1),
+                            Color(0xFFffffff),
                             Color(0xFFffffff),
                       ])),
                       padding: EdgeInsets.all(16),

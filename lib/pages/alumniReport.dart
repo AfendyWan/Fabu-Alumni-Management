@@ -15,7 +15,7 @@ class ReportPage extends StatefulWidget  {
 class ReportPageState extends State<ReportPage> {
   List<AlumniData> chartData = [];
   Future<String> _loadAlumniDataAsset() async {
-  return await rootBundle.loadString('assets/file.json');
+  return await rootBundle.loadString('assets/alumniFile.json');
 }
  
 
@@ -42,8 +42,12 @@ class ReportPageState extends State<ReportPage> {
         Column(children: [
           //Initialize the chart widget
         Container(
-        height: 550,
+        height: 200,
         child: SfCartesianChart(
+            palette: <Color>[
+                            Colors.green,
+                        ],
+            title: ChartTitle( text: "Number of alumni graduated with Masters"),
             primaryXAxis: CategoryAxis(
               title: AxisTitle(text: "Batch Year")
             ),
@@ -51,11 +55,59 @@ class ReportPageState extends State<ReportPage> {
             legend: Legend(isVisible: true),
             tooltipBehavior: TooltipBehavior(enable: true),
             series: <ChartSeries<AlumniData, String>>[
-              LineSeries<AlumniData, String>(
+              ColumnSeries<AlumniData, String>(
                   name: "Alumni",
                   dataSource: chartData, // Deserialized Json data list.
-                  xValueMapper: (AlumniData report, _) => report.alumniGraduateYear,
-                  yValueMapper: (AlumniData report, _) => report.countYear,
+                  xValueMapper: (AlumniData report, _) => report.alumniGraduateYearMaster,
+                  yValueMapper: (AlumniData report, _) => report.totalAlumniGraduateYearMaster,
+                  // Enable data label
+                  dataLabelSettings: DataLabelSettings(isVisible: true))
+            ]
+            )),
+
+            Container(
+        height: 200,
+        child: SfCartesianChart(
+            palette: <Color>[
+                            Colors.orange,
+                        ],
+            title: ChartTitle( text: "Number of alumni graduated with Bachelors"),
+            primaryXAxis: CategoryAxis(
+              title: AxisTitle(text: "Batch Year")
+            ),
+            primaryYAxis: NumericAxis(title: AxisTitle(text: "Number of Alumni")),
+            legend: Legend(isVisible: true),
+            tooltipBehavior: TooltipBehavior(enable: true),
+            series: <ChartSeries<AlumniData, String>>[
+              ColumnSeries<AlumniData, String>(
+                  name: "Alumni",
+                  dataSource: chartData, // Deserialized Json data list.
+                  xValueMapper: (AlumniData report, _) => report.alumniGraduateYearDiploma,
+                  yValueMapper: (AlumniData report, _) => report.totalAlumniGraduateYearDiploma,
+                  // Enable data label
+                  dataLabelSettings: DataLabelSettings(isVisible: true))
+            ]
+            )),
+
+            Container(
+        height: 200,
+        child: SfCartesianChart(
+            palette: <Color>[
+                            Colors.teal,
+                        ],
+            title: ChartTitle( text: "Number of alumni graduated with Diploma"),
+            primaryXAxis: CategoryAxis(
+              title: AxisTitle(text: "Batch Year")
+            ),
+            primaryYAxis: NumericAxis(title: AxisTitle(text: "Number of Alumni")),
+            legend: Legend(isVisible: true),
+            tooltipBehavior: TooltipBehavior(enable: true),
+            series: <ChartSeries<AlumniData, String>>[
+              ColumnSeries<AlumniData, String>(
+                  name: "Alumni",
+                  dataSource: chartData, // Deserialized Json data list.
+                  xValueMapper: (AlumniData report, _) => report.alumniGraduateYearBachelor,
+                  yValueMapper: (AlumniData report, _) => report.totalAlumniGraduateYearBachelor,
                   // Enable data label
                   dataLabelSettings: DataLabelSettings(isVisible: true))
             ]

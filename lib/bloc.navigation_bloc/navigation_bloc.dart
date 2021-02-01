@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import '../pages/reportMainPage.dart';
-import '../pages/myaccountspage.dart';
+import '../pages/dashboard.dart';
 import '../pages/newsMainPage.dart';
 import '../pages/alumniListPage.dart';
 import '../pages/events.dart';
